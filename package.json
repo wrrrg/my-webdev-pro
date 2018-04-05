@@ -1,40 +1,37 @@
 {
-  "name": "my-webdev-pro",
+  "name": "mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "Job Tracker",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node server.js",
-    "client": "node scripts/start-client.js",
-    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "build": "node scripts/build.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wrrrg/my-webdev-pro.git"
+    "client": "cd client && npm run start",
+   "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+
+    "build": "cd client && npm run build",
+    "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "installDeps": "yarn && cd client && yarn"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wrrrg/my-webdev-pro/issues"
-  },
-  "homepage": "https://github.com/wrrrg/my-webdev-pro#readme",
   "devDependencies": {
     "concurrently": "^3.5.0",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "axios": "^0.17.1",
     "body-parser": "^1.18.2",
-    "express": "^4.16.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
     "express-session": "^1.15.6",
-    "mongoose": "^5.0.12",
     "morgan": "^1.9.0",
-    "nodemon": "^1.17.3",
     "passport": "^0.4.0",
-    "passport-github": "^1.1.0",
-    "session-file-store": "^1.2.0",
-    "socket.io": "^2.1.0"
+    "passport-local": "^1.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14",
+    "bcrypt": "^1.0.3",
+    "mongoose": "^5.0.11"
   }
 }
+  

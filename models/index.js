@@ -1,3 +1,4 @@
 module.exports = {
-  Article: require("./article")
+  User: require('./User'),
+  SocialMediaMembership: require('./SocialMediaMembership')
 };
