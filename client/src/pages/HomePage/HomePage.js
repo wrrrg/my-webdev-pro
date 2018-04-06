@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { Component, Fragment } from 'react';
 import { List, ListItem } from 'material-ui/List';
-import { withUser } from '../services/withUser';
+import { withUser } from '../../services/withUser';
+import './HomePage.css';
 
 const initial = {
   color: "yellow",
-  fontSize: "15px" 
+  fontSize: "15px"
 }
 
 class HomePage extends Component {
@@ -39,7 +40,7 @@ class HomePage extends Component {
     return (
       <Fragment>
         {user && stuff &&
-          <div>
+          <div className="welcome-message">
             Welcome back, {user.username}!
           <List>
            {stuff.map((s, i) => <ListItem key={i} primaryText={s} />)}
@@ -50,7 +51,7 @@ class HomePage extends Component {
           <div>Hold on, looking for your stuff...</div>
         }
         {!user &&
-          <div style ={initial}>Hey! I don't recognize you! Register and log in using the link above</div>
+          <div class="welcome-message">Hey! I don't recognize you! Register and log in using the link above</div>
         }
       </Fragment>
     );
