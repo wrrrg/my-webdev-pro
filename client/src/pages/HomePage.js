@@ -3,6 +3,11 @@ import React, { Component, Fragment } from 'react';
 import { List, ListItem } from 'material-ui/List';
 import { withUser } from '../services/withUser';
 
+const initial = {
+  color: "yellow",
+  fontSize: "15px" 
+}
+
 class HomePage extends Component {
   state = {
     stuff: null
@@ -45,7 +50,7 @@ class HomePage extends Component {
           <div>Hold on, looking for your stuff...</div>
         }
         {!user &&
-          <div>Hey! I don't recognize you! Register and log in using the link above</div>
+          <div style ={initial}>Hey! I don't recognize you! Register and log in using the link above</div>
         }
       </Fragment>
     );
