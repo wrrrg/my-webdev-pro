@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
+import Modal from './components/Modal/Modal';
 import Navbar from './components/Navbar';
 
 import { withUser, update } from './services/withUser';
@@ -13,6 +13,15 @@ import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 class App extends Component {
+  state = {
+    show: false
+  }
+  showModal = () => {
+    this.setState({
+      ...this.state,
+      show: !this.state.show
+    });
+  } 
   componentDidMount() {
     // this is going to double check that the user is still actually logged in
     // if the app is reloaded. it's possible that we still have a user in sessionStorage
@@ -36,6 +45,16 @@ class App extends Component {
       <Router>
         <MuiThemeProvider>
           <Fragment>
+           <inputTag placeholder="press enter/space to +tag" />
+
+           <input type = "button"
+              onClick={this.showModal}
+              value ="Show Modal" />
+           <Modal
+               onClose={this.showModal} 
+               show={this.state.show}>
+               This is working!!
+           </Modal>
             <Navbar
               user={user}
             />
