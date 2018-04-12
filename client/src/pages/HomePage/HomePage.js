@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { List, ListItem } from 'material-ui/List';
 import { withUser } from '../../services/withUser';
 import './HomePage.css';
-import Modal from '/Users/David/my-webdev-pro/client/src/components/Modal/Modal';
+import Modal from '../../components/Modal/Modal';
 
 const initial = {
   color: "yellow",
